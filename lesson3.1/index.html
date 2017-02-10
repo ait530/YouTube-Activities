@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youtube Lesson 3.1</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+// ask the user if they want steak
+// have one option if they choose steak, and another option if they choose no steak
+// ask the user what year they were born
+// tell them whether they can have sake or not
+
+
+//1. Confirms gives boolean value true or false (ok = true, cancel=false)
+// var eatSteak = confirm("do you eat steak?");
+// alert(eatSteak);
+
+
+
+
+//2. Conditional statement
+// If = if this statement is true, perform this action
+// Else = if this statement is false, perform this action
+// if (eatSteak) {
+  // alert("User chose steak!");
+// } else {
+  // alert("User didn't choose steak!");
+// }
+
+
+
+var eatSteak = confirm("do you eat steak?");
+alert(eatSteak);
+
+
+if(eatSteak) {
+  document.write("Here's a steak");
+} else {
+    document.write("Here's a tofu stir fry!");
+}
+
+
+// Ask the user what year they were born
+var year = prompt("What year were you born?");
+
+if (year < 1995) {
+  alert("Sake sake sake!")
+} else if (year > 1995) {
+  alert("No sake for you!");
+} else {
+  alert("You inched by! Sake sake sake!");
+}
+
+
+
+
+</script>
+
+</body>
+</html>

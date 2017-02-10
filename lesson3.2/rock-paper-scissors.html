@@ -17,6 +17,14 @@ Display the result to the user -->
 
 
 
+
+<div id = "game"> 
+  <p>Press r, p, or s to start playing</p>
+</div>
+
+
+
+
 <script type="text/javascript">
 
 
@@ -26,19 +34,128 @@ Display the result to the user -->
   // }
 
 
-// An array of options
+// An array of options for 
   var options = ["r", "p", "s"];
+  var wins = 0;
+  var losses = 0;
+  var ties = 0;
 
 
 // Whenever a key is pressed, the console will display the key in lower case
+
   document.onkeyup = function() {
-    var userguess = String.fromCharCode(event.keyCode).toLowerCase();
+    var userguess = String.fromCharCode(event.keyCode).
+        toLowerCase();
 
     console.log(userguess);
 
-    var computerGuess = options[Math.floor(Math.random()=options.length)];
+
+    // Assigns a variable:computerGuess; set to equal formula;Math.random will produce a random decimal between 0 and 1, then it will mulitply that by the length of the array which is always 1 more than the number of indexes in an array (1, 2, 3 instead of 0, 1, 2); then multiply by Math.floor which rounds down to the number below instead of rounding up or down depending on the decimal following
+   
+    var computerGuess = options [Math.floor(Math.random()*options.length)];
 
     console.log(computerGuess);
+
+
+    // Checks to see if th user has chosen an r, p, or s, if yes, they made the correct choice, if not, will have user to choose the correct letter
+    // if (userguess=='r' || userguess=='p' || userguess =='s') {
+    //     alert("chosen correctly!");
+    // } else {
+    //     alert("Please choose r, p, or s");
+    // }
+
+
+    // if the user guesses r, and the computer guess is r, it will alert to user that there is a tie
+    // if (userguess=='r' || userguess=='p' || userguess=='s') {
+    //     if((userguess=='r') && (computerGuess=='s')) {
+    //         alert("You lose!")
+    //     }
+
+    //     if((userguess=='r') && (computerGuess=='p')) {
+    //         alert("You win!")
+    //     }
+
+    //     if((userguess=='s') && (computerGuess=='p')) {
+    //         alert("You win!")
+    //     }
+        
+
+    //     if((userguess=='s') && (computerGuess=='r')) {
+    //         alert("You lose!")
+    //     }
+
+
+    //     if((userguess==computerGuess)) {
+    //         alert("You tie!")
+    //     }
+
+    // } else {
+    //   alert("Please choose r, p, or s");
+    // }
+
+
+    if (userguess=='r' || userguess=='p' || userguess=='s') {
+        
+        if((userguess=='r') && (computerGuess=='s')) {
+            wins++;
+            alert("Wins: " + wins);
+        }
+
+        if((userguess=='r') && (computerGuess=='p')) {
+            alert("You lose!")
+            wins++;
+            alert("Losses: " + losses);
+        }
+
+        if((userguess=='s') && (computerGuess=='p')) {
+            alert("You win!")
+            wins++;
+            alert("Wins: " + wins);
+        }
+        
+
+        if((userguess=='s') && (computerGuess=='r')) {
+            alert("You lose!")
+            losses++;
+            alert("Losses: " + losses);
+        }
+
+
+        if((userguess=='p') && (computerGuess=='s')) {
+            alert("You lose!")
+            losses++;
+            alert("Losses: " + losses);
+        }
+
+
+        if((userguess=='p') && (computerGuess=='r')) {
+            alert("You win!")
+            losses++;
+            alert("Wins: " + wins);
+        }
+
+
+
+        if((userguess==computerGuess)) {
+            alert("Ties: " + ties);
+            ties++;
+        }
+
+    } else {
+      alert("Please choose r, p, or s");
+    }
+
+
+
+    // Updates variable html with W,L, Ties
+    var html = "<p>Press r, p, or s to start playing</p>" 
+    + "<p>wins: " + wins + "</p>" +
+    "<p>losses: " + losses + "</p>" +
+    "<p>ties: " + ties + "</p>";
+
+
+    // Target the div game, and replace all of the html inside with the new variable, html
+    document.querySelector('#game').innerHTML = html;
 
   }
 

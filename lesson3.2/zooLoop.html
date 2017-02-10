@@ -9,35 +9,52 @@
 
 
 
-// This is an array, always starts at 0
-var animals = ["Zebra", "Rhino", "Giraffe", "Owl"];
+// Below is an array, always starts at index value 0.
+// var animals = ["Zebra", "Rhino", "Giraffe", "Owl"];
+
+
+var animals = ["Zebra", "Rhino", "Giraffe", "Owl", "Dog"];
 
 
 // Prints in console
-console.log(animals[0]);
-console.log(animals[1]);
-console.log(animals[2]);
-console.log(animals[3]);
+// Prints zebra 
+// console.log(animals[0]);
+// Prints Rhino, and so on...
+// console.log(animals[1]);
+// console.log(animals[2]);
+// console.log(animals[3]);
 
-var length = animals.length
-console.log(length);
+// var length = animals.length
+// console.log(length);
 
+
+
+
+// For Loop:
 // The counter is i (standard, technically could be anything
 
 // i is an integer
 
 
 // i=0 starts at 0
-// as long as i (integer) is less than the length of the animals array, do whatever is between the brackets
+// as long as i (integer) is less than the length of the animals array, do whatever is between the brackets (in this case, 0 < 4)
 
 // Once that is done, increment the number and start over
 
-// i++ means increment the number and start over
+// i++ means increment (increase) the number and start over
+
+
+
+//variable i starts at 0; is 0 less than the length of animals (in this case it's 4)?; if it is, then go ahead and console.log i's current value (in this case, it's console.log[0]) which is zebra; then start loop again at [1] (zebra); then again for [2], then [3]...; once the loop goes to [4], then it exists the loop since 4 is not < 4.
 
 for (var i=0; i<animals.length; i++){
-
-
+  console.log(animals[i]);
 }
+
+
+// You can add to an array, and it will still console.log since it is only influenced by the length of the array
+
+
 
 </script>
 
